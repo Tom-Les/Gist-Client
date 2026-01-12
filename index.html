@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tomeg's Gist Tool</title>
+		<link rel="stylesheet" href="style.css" />
+		<script defer src="script.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Tomeg's Gist Tool</h1>
+		</header>
+
+		<main>
+			<textarea
+				id="textArea"
+				placeholder="Type or load your text here..."
+			></textarea>
+
+			<div class="row">
+				<input type="file" id="fileInput" accept=".txt" />
+				<input
+					id="gistTitle"
+					type="text"
+					placeholder="Gist title (e.g. notes.txt)"
+				/>
+			</div>
+
+			<div class="row">
+				<button onclick="downloadText()">⬇ Download as TXT</button>
+				<button onclick="uploadToGist()">⬆ Upload to Gist</button>
+				<button onclick="clearFields()">🧼 Clear All</button>
+			</div>
+
+			<div class="row">
+				<input id="gistUrl" type="text" placeholder="Paste Gist URL or ID" />
+			</div>
+
+			<div class="row">
+				<button onclick="loadGist()">📥 Load Gist</button>
+				<button onclick="deleteGist()">🗑 Delete Gist</button>
+			</div>
+
+			<div class="row">
+				<select id="gistSelect">
+					<option value="">Select a saved Gist</option>
+				</select>
+				<button onclick="loadSelectedGist()">📂 Load Selected</button>
+				<button onclick="clearSavedGists()">🧹 Clear Saved</button>
+			</div>
+
+			<div class="gist-link">
+				<a id="gistLink" target="_blank" rel="noopener noreferrer"></a>
+			</div>
+		</main>
+
+		<footer>
+			<p>
+				Built by Tomeg •
+				<a href="https://gist.github.com/Tomeg64" target="_blank">GitHub</a>
+			</p>
+		</footer>
+	</body>
+</html>
